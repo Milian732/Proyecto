@@ -28,13 +28,13 @@ Adrián Milián Palomares 2º ASIR
 13. [DURACIÓN DEL PROYECTO..................................................................................................37](#_page36_x56.70_y68.70)
 13. [CONCLUSIÓN............................................................................................................................38](#_page37_x56.70_y68.70)
 13. [BIBLIOGRAFÍA..........................................................................................................................39](#_page38_x56.70_y68.70)
-1. **INTRODUCCIÓN**
+## 1. **INTRODUCCIÓN**
 
 <a name="_page2_x56.70_y68.70"></a>El proyecto trata sobre tener 3 servidores **Proxmox** con un **clúster** creado entre ellos, y dentro de uno de los servidores, una máquina virtual con **Ubuntu**, **Apache**, de tal manera que si el servidor que contiene la máquina virtual falla, ésta migre hacia otro servidor y pueda seguir funcionando. 
 
 Además, hay que configurar una máquina virtual externa con Ubuntu, con un almacenamiento compartido **NFS** implementado en el que se guarde la maquina virtual de Proxmox para su correcto funcionamiento.
 
-2. **PROXMOX**
+## 2. **PROXMOX**
 
 <a name="_page3_x56.70_y68.70"></a>Proxmox Virtual Environment es un entorno de virtualización de servidor de código abierto. Es una distribución Linux basada en Debian que permite el despliegue y gestión de máquinas virtuales y contenedores. Incluye una consola Web y herramientas de línea de comandos, y proporciona una API REST para herramientas de terceros.
 
@@ -42,7 +42,7 @@ He decidido usar Proxmox ya que no lo he probado antes y porque es una herramien
 
 ![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.003.jpeg)
 
-4. **ESTRUCTURA<a name="_page4_x56.70_y56.70"></a> DEL PROYECTO**
+## 4. **ESTRUCTURA<a name="_page4_x56.70_y56.70"></a> DEL PROYECTO**
 
 La estructura del proyecto contará con cuatro máquinas virtuales, tres de ellas formarán el clúster de Proxmox y la otra máquina será el servidor de almacenamiento compartido NFS.
 
@@ -59,7 +59,7 @@ Para generar esta estructura, he utilizado el software de virtualización **VMWA
 |<p>**Interfaces** </p><p>**de red**</p>|<p>Adaptador </p><p>puente</p>|<p>Adaptador </p><p>puente</p>|<p>Adaptador </p><p>puente</p>|<p>Adaptador </p><p>puente</p>|
 |<p>**Versión** </p><p>**del SO**</p>|Proxmox VE 8.1.2|<p>` `Proxmox VE</p><p>8\.1.2</p>|<p>` `Proxmox VE</p><p>8\.1.2</p>|<p>Ubuntu </p><p>server 22.04</p>|
 
-5. **INSTALACIÓN<a name="_page5_x56.70_y56.70"></a> DE PROXMOX**
+## 5. **INSTALACIÓN<a name="_page5_x56.70_y56.70"></a> DE PROXMOX**
 
 Antes de poner la máquina en marcha hay que poner la siguiente opción en la configuración de cada máquina Proxmox
 
@@ -87,7 +87,7 @@ Y por último la configuración de la red y el nombre del host (En este apartado
 
 ![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.010.png)Ahora se repetirán los mismos pasos pero para el servidor 2 y el 3 cambiando solo el nombre del host y la IP.
 
-6. **CONFIGURACIÓN<a name="_page9_x56.70_y128.60"></a> DE NFS**
+## 6. **CONFIGURACIÓN<a name="_page9_x56.70_y128.60"></a> DE NFS**
 
 Se instala la MV con ubuntu server.
 
@@ -127,7 +127,7 @@ Después de esto ya aparecerá en la lista de Almacenamiento
 
 ![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.017.png)
 
-7. **CREACIÓN<a name="_page12_x56.70_y259.50"></a> DE EL CONTENEDOR LXC DE UBUNTU 23.10**
+## 7. **CREACIÓN<a name="_page12_x56.70_y259.50"></a> DE EL CONTENEDOR LXC DE UBUNTU 23.10**
 
 Lo primero es instalar la plantilla para el contenedor que ofrece el propio proxmox de ubuntu 23.10, para esto hay que ir al almacenamiento NFS y ir al apartado de **Plantilla de CT**
 
@@ -183,7 +183,7 @@ Siempre puedes probar si funciona con la instalación normal.
 
 ![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.028.png)Al iniciar el contenedor el usuario será **root** y la contraseña la que hayamos puesto en la instalación.
 
-8. **CREACIÓN<a name="_page18_x56.70_y128.60"></a> DE LA RED NAT**
+## 8. **CREACIÓN<a name="_page18_x56.70_y128.60"></a> DE LA RED NAT**
 
 Para la creación de la red nat hay que empezar creando una nueva interfaz de red, para ello hay que ir al apartado de red del servidor proxmox y darle a **Crear**.
 
@@ -224,7 +224,7 @@ Iniciamos el contenedor y comprobamos que está saliendo al exterior.
 
 Con esto la red NAT ya estaría saliendo fuera de su red.
 
-9. **CREACIÓN<a name="_page21_x56.70_y337.65"></a> DEL CLÚSTER**
+## 9. **CREACIÓN<a name="_page21_x56.70_y337.65"></a> DEL CLÚSTER**
 
 Para la creación del clúster tendremos que acceder mediante consola a los servidores. Para ello, ejecutaremos la opción Shell de los servidores, que permite crear una conexión mediante VNC.
 
@@ -282,13 +282,13 @@ Una vez añadida la MV al grupo de HA, podremos ver como la máquina nos indica 
 
 ![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.045.png)
 
-11. **INSTALACIÓN<a name="_page27_x56.70_y56.70"></a> DE APACHE**
+## 11. **INSTALACIÓN<a name="_page27_x56.70_y56.70"></a> DE APACHE**
 
 Vamos al contenedor y instalamos el paquete de apache2
 
 ![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.046.png)
 
-1. **ACCESO<a name="_page27_x56.70_y299.30"></a> DESDE FUERA DE LA RED AL CONTENEDOR**
+## 11.1 **ACCESO<a name="_page27_x56.70_y299.30"></a> DESDE FUERA DE LA RED AL CONTENEDOR**
 
 para que podamos ver la pagina de inicio de apache tenemos que habilitar en el firewall una regla de port forwarding para que las peticiones que entren a la IP del proxmox vayan redirigidas al puerto 80 de la ip del contenedor.
 
@@ -302,7 +302,7 @@ Después de poner esta línea reiniciamos el servidor proxmox, cuando inicie tam
 
 Estos pasos hay que repetirlos para cada servidor proxmox para cuando se haga la alta disponibilidad la página siga viendose.
 
-2. **CONFIGURACIÓN<a name="_page28_x56.70_y500.95"></a> DE NUESTRO SITIO WEB**
+## 11.2 **CONFIGURACIÓN<a name="_page28_x56.70_y500.95"></a> DE NUESTRO SITIO WEB**
 
 Lo que vamos a hacer es configurar apache para que en el navegador tengamos nuestra página funcionando.
 
@@ -332,7 +332,7 @@ Con esto la página ya debería verse Mi página:
 
 ![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.054.png)
 
-12. **PRUEBA<a name="_page31_x56.70_y56.70"></a> DE HA**
+## 12. **PRUEBA<a name="_page31_x56.70_y56.70"></a> DE HA**
 
 Vamos a observar las posibles opciones a la hora de migrar el contenedor contenido en el servidor Proxmox.
 
@@ -356,7 +356,7 @@ Le damos a Migrar y cambiará al servidor que le indiquemos, en este caso al ser
 
 Si recargamos la página seguirá funcionando sin ningún problema.![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.060.png)
 
-13. **MONITORIZACIÓN**
+## 13. **MONITORIZACIÓN**
 
 <a name="_page34_x56.70_y56.70"></a>Una de las grandes virtudes de Proxmox es la monitorización de los recursos que están en uso en los servidores, MV, contenedores y clústeres. No hace falta ningún programa externo.
 
@@ -368,13 +368,13 @@ Al llevarlo ya incluido se puede demostrar la versatilidad y usabilidad en entor
 
 ![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.063.png)
 
-14. **DURACIÓN<a name="_page36_x56.70_y68.70"></a> DEL PROYECTO**
+## 14. **DURACIÓN<a name="_page36_x56.70_y68.70"></a> DEL PROYECTO**
 
 Gracias al Diagrama de Gantt se puede hacer una aproximación del tiempo que se ha estado haciendo el proyecto.
 
 ![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.064.png)
 
-15. **CONCLUSIÓN**
+## 15. **CONCLUSIÓN**
 
 <a name="_page37_x56.70_y68.70"></a>Como se ha podido observar, montar un clúster de alta disponibilidad en Proxmox es algo bastante sencillo de realizar gracias a la simplicidad que nos ofrece la interfaz web de Proxmox.
 
@@ -382,7 +382,7 @@ Hay que tener en cuenta que se necesita una infraestructura adecuada que quizá 
 
 Si la empresa se pudiese permitir esta infraestructura sería una opción muy interesante y potente que sería capaz de ofrecer infinidad de servicios como pueden ser servidores web, servidores DNS, almacenamiento en base de datos, replicación, etc
 
-16. **BIBLIOGRAFÍA**
+## 16. **BIBLIOGRAFÍA**
 
 <a name="_page38_x56.70_y68.70"></a>Montar NFS:
 
