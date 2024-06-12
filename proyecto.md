@@ -302,7 +302,9 @@ Vamos al contenedor y instalamos el paquete de apache2
 
 para que podamos ver la pagina de inicio de apache tenemos que habilitar en el firewall una regla de port forwarding para que las peticiones que entren a la IP del proxmox vayan redirigidas al puerto 80 de la ip del contenedor.
 
-Para esto hay que ir a la terminal del servidor proxmox y en el mismo fichero que se han creado las reglas del firewall para tener red hay que poner lo siguiente:![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.047.png)
+Para esto hay que ir a la terminal del servidor proxmox y en el mismo fichero que se han creado las reglas del firewall para tener red hay que poner lo siguiente:
+
+![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.047.png)
 
 post-up iptables -t nat -A PREROUTING -p tcp -d [ip servidor proxmox] --dport 80 -i vmbr0 -j DNAT --to-destination [ip contenedor]:80
 
