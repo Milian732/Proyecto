@@ -356,6 +356,8 @@ Ahora, vamos a apagar el servidor 1 y ver como se cambia al servidor 2.
 
 ![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.055.png)
 
+
+
 ![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.056.png)
 
 Como se puede ver se ha hecho la migración al otro servidor gracias a HA, si vamos al buscador debería seguir en funcionamiento.
