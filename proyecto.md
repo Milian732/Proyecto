@@ -372,7 +372,9 @@ Le damos a Migrar y cambiará al servidor que le indiquemos, en este caso al ser
 
 ![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.059.png)
 
-Si recargamos la página seguirá funcionando sin ningún problema.![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.060.png)
+Si recargamos la página seguirá funcionando sin ningún problema.
+
+![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.060.png)
 
 ## 12. **MONITORIZACIÓN**
 
