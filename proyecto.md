@@ -67,7 +67,9 @@ Antes de poner la máquina en marcha hay que poner la siguiente opción en la co
 
 Una vez arrancada la MV, seleccionamos la primera opción.
 
-![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.005.png)Luego tendrás que aceptar términos de la licencia para continuar con la instalación.
+![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.005.png)
+
+Luego tendrás que aceptar términos de la licencia para continuar con la instalación.
 
 Seleccionas el disco.
 
@@ -81,11 +83,15 @@ Pones la contraseña.
 
 Y por último la configuración de la red y el nombre del host (En este apartado sale sola la IP pero la puedes cambiar).
 
-![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.008.png)Una vez hecho todo esto se instalará, posteriormente te dará la IP y el puerto por el que escucha para entrar en la interfaz gráfica vía web. El usuario siempre es **root** y la contraseña la que hayas puesto.
+![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.008.png)
+
+Una vez hecho todo esto se instalará, posteriormente te dará la IP y el puerto por el que escucha para entrar en la interfaz gráfica vía web. El usuario siempre es **root** y la contraseña la que hayas puesto.
 
 ![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.009.png)
 
-![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.010.png)Ahora se repetirán los mismos pasos pero para el servidor 2 y el 3 cambiando solo el nombre del host y la IP.
+![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.010.png)
+
+Ahora se repetirán los mismos pasos pero para el servidor 2 y el 3 cambiando solo el nombre del host y la IP.
 
 ## 5. **CONFIGURACIÓN<a name="_page9_x56.70_y128.60"></a> DE NFS**
 
@@ -234,7 +240,9 @@ En los tres servidores hay que eliminar los repositorios de pago, en este caso e
 
 **pve-enterprise.list** Y añadir el siguiente:
 
-![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.034.png)Una vez añadidos, actualizas los repositorios de los 3 servidores.
+![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.034.png)
+
+Una vez añadidos, actualizas los repositorios de los 3 servidores.
 
 Ahora hay que añadir los servidores que formarán el clúster al archivo /etc/hosts de cada uno:
 
@@ -312,7 +320,9 @@ Para ello hay que copiar el fichero **000-default.conf** y lo llamamos de otra f
 
 ![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.049.png)
 
-![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.050.png)Después de crearlo modificamos el fichero para que vaya a la ruta que creamos para que obtenga el fichero html y así mostrar la página
+![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.050.png)
+
+Después de crearlo modificamos el fichero para que vaya a la ruta que creamos para que obtenga el fichero html y así mostrar la página
 
 Mi fichero .conf:
 
@@ -348,7 +358,9 @@ Ahora, vamos a apagar el servidor 1 y ver como se cambia al servidor 2.
 
 Como se puede ver se ha hecho la migración al otro servidor gracias a HA, si vamos al buscador debería seguir en funcionamiento.
 
-![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.057.png)La otra opción es la migración manual del contenedor. Para ello simplemente hay que dar con el botón derecho del ratón sobre el contenedor y **Migrar**
+![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.057.png)
+
+La otra opción es la migración manual del contenedor. Para ello simplemente hay que dar con el botón derecho del ratón sobre el contenedor y **Migrar**
 
 ![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.058.png)
 
