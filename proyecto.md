@@ -181,7 +181,9 @@ Siempre puedes probar si funciona con la instalación normal.
 
 - Configuración de los DNS
 
-![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.028.png)Al iniciar el contenedor el usuario será **root** y la contraseña la que hayamos puesto en la instalación.
+![](imagenes/Aspose.Words.962b3fba-7070-42cb-8b6d-5c58dc4c9b6b.028.png)
+
+Al iniciar el contenedor el usuario será **root** y la contraseña la que hayamos puesto en la instalación.
 
 ## 7. **CREACIÓN<a name="_page18_x56.70_y128.60"></a> DE LA RED NAT**
 
